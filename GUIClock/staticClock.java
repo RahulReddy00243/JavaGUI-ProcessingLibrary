@@ -22,7 +22,8 @@ public class staticClock extends PApplet{
 	@Override
 	public void draw() {
 	
-		
+		fill(255,120,0);
+		ellipse(width/4,height/5,width/5,height/5);
 	}
 
 	
