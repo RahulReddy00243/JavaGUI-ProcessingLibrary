@@ -3,8 +3,8 @@ package GUIClock;
 import processing.core.PApplet;
 import processing.core.PImage;
 
-public class staticClock extends PApplet {
-
+public class DynamicClock extends PApplet {
+	
 	private PImage backgroundIMG;
 	private String URL = "https://affordableholidaysblog.files.wordpress.com/2015/05/matira-beach-bora-bora2.jpg";
 
@@ -32,8 +32,29 @@ public class staticClock extends PApplet {
 		backgroundIMG.resize(0, height);
 		image(backgroundIMG, 0, 0);
 
-		fill(255, 120, 0);
+	
+		int [] rgb = clock(abs(second()-30)); 
+		fill(rgb[0], rgb[1], 0);
 		ellipse(width / 4, height / 5, width / 5, height / 5);
+		
 	}
 
+	public int[] clock(float seconds){
+		
+		int[] colors = new int[3];
+		
+		float time = seconds/30;
+		
+		colors[0] = (int) (time*255);
+		colors[1] = (int) (time*200);
+		colors[0] = 0;
+
+
+		
+		
+		
+		return colors;
+		
+	}
+	
 }
